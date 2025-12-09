@@ -19,10 +19,9 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     gcc \
     python3-dev \
-    default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# IMPORTANT FIX
+# IMPORTANT: full write permission for db.sqlite3
 RUN mkdir -p /app && chmod -R 777 /app
 
 WORKDIR /app
