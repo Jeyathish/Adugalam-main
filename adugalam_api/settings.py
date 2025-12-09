@@ -2,8 +2,8 @@ from pathlib import Path
 from datetime import timedelta
 import os
 
-import pymysql
-pymysql.install_as_MySQLdb()
+# import pymysql
+# pymysql.install_as_MySQLdb()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -84,19 +84,19 @@ WSGI_APPLICATION = "adugalam_api.wsgi.application"
 # --------------------------------------------------------
 # DATABASE (MYSQL)
 # --------------------------------------------------------
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "adugalam_db",
-        "USER": "root",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "3306",
-        "OPTIONS": {
-            "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "adugalam_db",
+#         "USER": "root",
+#         "PASSWORD": "",
+#         "HOST": "localhost",
+#         "PORT": "3306",
+#         "OPTIONS": {
+#             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",
+#         },
+#     }
+# }
 
 DATABASES = {
     'default': {
