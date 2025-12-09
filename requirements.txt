@@ -23,7 +23,7 @@ distlib==0.4.0
 dj-database-url==2.1.0
 Django==4.2.10
 django-admin-honeypot==1.1.0
-django-allauth==0.38.0
+django-allauth==0.63.3
 django-appconf==1.0.2
 django-bootstrap-form==3.4
 django-bootstrap4==0.0.8
