@@ -3,7 +3,6 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install minimal dependencies for WeasyPrint (Cairo, Pango, Harfbuzz)
 RUN apt-get update && apt-get install -y \
     build-essential \
     libcairo2 \
@@ -17,15 +16,18 @@ RUN apt-get update && apt-get install -y \
     shared-mime-info \
     libxml2 \
     libxslt1.1 \
-    python3-dev \
+    pkg-config \
     gcc \
+    python3-dev \
     default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# IMPORTANT FIX
+RUN mkdir -p /app && chmod -R 777 /app
 
 WORKDIR /app
 
 COPY requirements.txt .
-
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . .
