@@ -3,11 +3,23 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install system dependencies needed for mysqlclient
+# Install system dependencies required by WeasyPrint + Cairo + Pango
 RUN apt-get update && apt-get install -y \
-    default-libmysqlclient-dev \
-    gcc \
+    build-essential \
+    libcairo2 \
+    libcairo2-dev \
+    libpango-1.0-0 \
+    libpango1.0-dev \
+    libgdk-pixbuf2.0-dev \
+    libffi-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    shared-mime-info \
+    libxml2 \
+    libxslt1.1 \
     pkg-config \
+    gcc \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
