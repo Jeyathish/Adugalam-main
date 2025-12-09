@@ -1,13 +1,13 @@
-FROM weasyprint/weasyprint:latest
+FROM ghcr.io/italia/weasyprint:latest
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install MySQL build dependencies
+# Install MySQL dependencies
 RUN apt-get update && apt-get install -y \
     default-libmysqlclient-dev \
-    gcc \
     python3-dev \
+    gcc \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
