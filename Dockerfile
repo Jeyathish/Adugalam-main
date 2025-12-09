@@ -1,13 +1,25 @@
-FROM weasyprint/docker-weasyprint:latest
+FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install MySQL client libs
+# Install minimal dependencies for WeasyPrint (Cairo, Pango, Harfbuzz)
 RUN apt-get update && apt-get install -y \
-    default-libmysqlclient-dev \
+    build-essential \
+    libcairo2 \
+    libcairo2-dev \
+    libpango-1.0-0 \
+    libpango1.0-dev \
+    libgdk-pixbuf-2.0-dev \
+    libffi-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    shared-mime-info \
+    libxml2 \
+    libxslt1.1 \
     python3-dev \
     gcc \
+    default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
