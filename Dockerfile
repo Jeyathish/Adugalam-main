@@ -3,7 +3,7 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install WeasyPrint + Cairo system dependencies
+# Install WeasyPrint + Cairo system dependencies + MySQL build deps
 RUN apt-get update && apt-get install -y \
     build-essential \
     libcairo2 \
@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     gcc \
     python3-dev \
-    default-libmysqlclient-dev \  # Add this line
+    default-libmysqlclient-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
