@@ -1,3 +1,5 @@
+setuptools==68.0.0
+wheel
 amqp==5.2.0
 aniso8601==9.0.1
 arabic-reshaper==3.0.0
