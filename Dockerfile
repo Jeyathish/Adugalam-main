@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     libcairo2-dev \
     libpango-1.0-0 \
     libpango1.0-dev \
-    libgdk-pixbuf-2.0-dev \ 
+    libgdk-pixbuf-2.0-dev \
     libffi-dev \
     libjpeg-dev \
     zlib1g-dev \
@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     gcc \
     python3-dev \
+    default-libmysqlclient-dev \  # Add this line
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
