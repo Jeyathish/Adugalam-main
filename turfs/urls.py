@@ -11,16 +11,16 @@ from .views import (
 )
 
 urlpatterns = [
-
-    #  PUBLIC TURF APIs
-    path("", turf_list),                                     # GET /turfs/
-    path("<int:turf_id>/", turf_detail),                     # GET /turfs/5/
-    path("search/", turf_search),                            # GET /turfs/search?q=football
-    path("<int:turf_id>/slots/", turf_slots_by_date),        # GET /turfs/5/slots?date=YYYY-MM-DD
+    # PUBLIC TURF APIs
+    path("", turf_list),                                      # GET /turfs/
+    path("search/", turf_search),                             # GET /turfs/search/
+    path("<int:turf_id>/slots/", turf_slots_by_date),         # GET /turfs/5/slots/
+    path("<int:turf_id>/", turf_detail),                      # GET /turfs/5/
 
     # OWNER TURF APIs
-    path("add/", add_turf),                                  # POST /turfs/add/
-    path("<int:turf_id>/edit/", edit_turf),                  # PUT /turfs/5/edit/
-    path("<int:turf_id>/upload-image/", upload_turf_image),  # POST /turfs/5/upload-image/
-    path("image/<int:image_id>/delete/", delete_turf_image), # DELETE /turfs/image/10/delete/
+    path("add/", add_turf),
+    path("<int:turf_id>/edit/", edit_turf),
+    path("<int:turf_id>/upload-image/", upload_turf_image),
+    path("image/<int:image_id>/delete/", delete_turf_image),
 ]
+
